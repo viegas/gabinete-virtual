@@ -1,0 +1,112 @@
+.page-login {
+  background: #fff;
+}
+.login-box {
+  width: 400px;
+  padding: 20px 60px 40px 60px;
+  background: #eee;
+  border-top: 4px solid #ddd;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+.login-box > * {
+  margin-bottom: 15px;
+}
+.login-box > *:last-child {
+  margin-bottom: 0;
+}
+.nav-square,
+.main-nav .logo,
+.user .user-pic {
+  width: 60px;
+  height: 60px;
+}
+.page-index > .content {
+  background: #eee;
+}
+.main-nav {
+  height: 60px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+}
+.main-nav > * {
+  height: 60px;
+}
+.main-nav .logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  border-right: 2px solid #eaeaea;
+}
+.main-nav .controls {
+  display: table;
+  margin: 0 auto;
+}
+.user {
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
+.user .user-pic {
+  margin: 0;
+  float: left;
+  position: relative;
+}
+.user .user-pic > img {
+  background: #eee;
+  border-radius: 50%;
+  width: 75%;
+  height: 75%;
+  border: 1px solid #eee;
+}
+.user .username {
+  font-size: 15px;
+  padding: 22px 0;
+}
+.user > * {
+  height: 60px;
+}
+.flex,
+.flex-wrap,
+.flex-center {
+  display: flex;
+}
+.flex-wrap {
+  min-height: 100vh;
+  flex-direction: column;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.flex-grow {
+  flex: 1;
+}
+.flat-box {
+  position: relative;
+}
+.flat-box .triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 35px solid #ddd;
+  border-right: 35px solid #fff;
+}
+.logo {
+  width: 400px;
+  height: 220px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.logo--big {
+  background: url("../img/logo--big.png") no-repeat center;
+}
+.logo--small {
+  background: url("../img/logo--small.png") no-repeat center;
+}
