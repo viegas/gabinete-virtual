@@ -6,13 +6,13 @@ USE rh ;
 
 
 CREATE TABLE Servidor (
-  MatriculaSiape             VARCHAR(7) Not Null,
-  Nome                       VARCHAR(100),
+  MatriculaSiape             VARCHAR(7)   Not Null,
+  Nome                       VARCHAR(100) Not Null,
   NomeMae                    VARCHAR(100),
   NomePai                    VARCHAR(100),
-  Senha                      VARCHAR(100),
-  Email                      VARCHAR(100),
-  Perfil                     VARCHAR(100),
+  Senha                      VARCHAR(100) Not Null,
+  Email                      VARCHAR(100) Not Null,
+  Perfil                     VARCHAR(100) Not Null,
   Sexo                       Boolean,
   DataNascimento             DATE,
   Naturalidade               VARCHAR(100),
@@ -22,8 +22,8 @@ CREATE TABLE Servidor (
   EstadoCivil                VARCHAR(100),
   TipoSanguineo              VARCHAR(2),
   FatorRH                    VARCHAR(5),
-  CPF                        VARCHAR(11),
-  RG                         VARCHAR(15),
+  CPF                        VARCHAR(11) Not Null,
+  RG                         VARCHAR(15) Not Null,
   RgOrgaoExpedidor           VARCHAR(10),
   RgUf                       VARCHAR(2),
   DataExpedicao              DATE,
@@ -51,10 +51,12 @@ CREATE TABLE Servidor (
   Banco                      VARCHAR(100),
   Agencia                    VARCHAR(100),
   Numero                     VARCHAR(100),
-  Status                     VARCHAR(100),
+  Status                     VARCHAR(100) Not Null,
   FormacaoExcedente          VARCHAR(100),
   FormacaoExcedente2         VARCHAR(100),
   InformacoessComplementares VARCHAR(100),
+  Motorista                  Boolean Not Null,
+  CNH                        Boolean Not Null,
   PRIMARY KEY (MatriculaSiape),
   UNIQUE INDEX MatriculaSiape_UNIQUE (MatriculaSiape ASC)
 );
@@ -63,8 +65,8 @@ CREATE TABLE Servidor (
 
 CREATE TABLE Setor (
   Id          integer auto_increment NOT NULL,
-  Nome        VARCHAR(100),
-  Responsavel VARCHAR(100),
+  Nome        VARCHAR(100) Not Null,
+  Responsavel VARCHAR(100) Not Null,
   Descricao   VARCHAR(100),
   Email       VARCHAR(100),
   IdSetor     integer NULL,
@@ -78,10 +80,10 @@ CREATE TABLE Setor (
 
 CREATE TABLE SetorServidor (
   setor_Id                integer   NOT NULL,
-  servidor_MatriculaSiape VARCHAR(7) NOT NULL, 
+  servidor_MatriculaSiape VARCHAR(7) NOT NULL,
   PRIMARY KEY (setor_Id, servidor_MatriculaSiape),
   INDEX fk_setor_has_servidor_servidor1_idx (servidor_MatriculaSiape ASC),
   INDEX fk_setor_has_servidor_setor_idx (setor_Id ASC),
-  CONSTRAINT fk_setor_has_servidor_setor      FOREIGN KEY (setor_Id)                REFERENCES Setor (Id),    
+  CONSTRAINT fk_setor_has_servidor_setor      FOREIGN KEY (setor_Id)                REFERENCES Setor (Id),
   CONSTRAINT fk_setor_has_servidor_servidor1  FOREIGN KEY (servidor_MatriculaSiape) REFERENCES Servidor (MatriculaSiape)
 );
